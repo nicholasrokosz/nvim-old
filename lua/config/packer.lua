@@ -58,4 +58,6 @@ return require('packer').startup(function(use)
 
     use 'lewis6991/impatient.nvim'
 
+    use 'karb94/neoscroll.nvim'
+
 end)
