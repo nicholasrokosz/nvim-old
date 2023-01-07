@@ -22,6 +22,11 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
+    use({ -- Additional text objects via treesitter
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        after = "nvim-treesitter",
+    })
+
     use('mbbill/undotree')
 
     -- taken from https://github.com/VonHeikemen/lsp-zero.nvim
@@ -70,5 +75,7 @@ return require('packer').startup(function(use)
     }
 
     use "lewis6991/gitsigns.nvim"
+
+    use("lukas-reineke/indent-blankline.nvim")
 
 end)
