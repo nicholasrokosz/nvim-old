@@ -32,3 +32,5 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = ""
+
+vim.opt.clipboard:append { 'unnamedplus' }
