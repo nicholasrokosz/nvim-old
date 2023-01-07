@@ -1,1 +1,2 @@
-require('config')
+require 'impatient'
+require 'config'
