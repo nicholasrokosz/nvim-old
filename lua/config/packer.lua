@@ -108,4 +108,9 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = '*'
+    }
+
 end)
