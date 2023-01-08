@@ -18,7 +18,12 @@ local opts = {
 --     f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
 --   },
 -- }, opts)
---
+
+-- local path = vim.loop.cwd() .. "/.git"
+-- local ok, err = vim.loop.fs_stat(path)
+-- if not ok then print(err) end
+
+
 wk.register({
     ["<leader>"] = {
         f = {
@@ -29,6 +34,9 @@ wk.register({
             h = { "<cmd>Telescope oldfiles<cr>", "File History" },
             n = { "<cmd>enew<cr>", "New File" },
             p = { "<cmd>Telescope registers<cr>", "Pasteboard" },
+            e = { "<cmd>Telescope file_browser theme=ivy<cr>", "File Explorer" },
+            s = { "<cmd>so<cr>", "Source File" },
+
         },
         g = {
             name = "+git",
@@ -39,6 +47,7 @@ wk.register({
         l = {
             name = "+lsp",
             t = { "<cmd>TroubleToggle<cr>", "Trouble" },
+            f = { "<cmd>LspZeroFormat<cr>", "Format" },
         },
         r = {
             name = "+run",
