@@ -59,6 +59,8 @@ return require('packer').startup(function(use)
 
     use 'j-hui/fidget.nvim'
 
+    use 'kyazdani42/nvim-web-devicons'
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -92,6 +94,18 @@ return require('packer').startup(function(use)
         config = function()
             require('leap').set_default_keymaps()
         end
+    }
+
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+        }
+    }
+
+    use {
+        'romgrk/barbar.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
 end)
