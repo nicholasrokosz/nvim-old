@@ -1,5 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
+-- Current workflow for adding a new plugin: `:w`, `:so`, `:PackerSync`
+
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -76,6 +78,11 @@ return require('packer').startup(function(use)
 
     use "lewis6991/gitsigns.nvim"
 
-    use("lukas-reineke/indent-blankline.nvim")
+    use "lukas-reineke/indent-blankline.nvim"
+
+    use {
+        "numToStr/Comment.nvim",
+        config = function() require("Comment").setup() end
+    }
 
 end)
