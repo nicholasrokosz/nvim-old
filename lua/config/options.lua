@@ -34,3 +34,15 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = ""
 
 vim.opt.clipboard:append { 'unnamedplus' }
+
+-- This didn't work without autocmd, taken from https://www.reddit.com/r/neovim/comments/sqld76/stop_automatic_newline_continuation_of_comments/hwm9k47/
+-- vim.opt.formatoptions = 'tcqj'
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+-- Case insensitive searching UNLESS /C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = "menuone,noselect"
