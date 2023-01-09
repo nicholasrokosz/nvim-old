@@ -38,6 +38,14 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope-file-browser.nvim" }
 
     use {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require "telescope".load_extension("frecency")
+        end,
+        requires = { "kkharji/sqlite.lua" }
+    }
+
+    use {
         "mcchrish/zenbones.nvim",
         -- Optionally install Lush. Allows for more configuration or extending the colorscheme
         -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
@@ -147,5 +155,10 @@ return packer.startup(function(use)
     use 'folke/which-key.nvim'
 
     use { 'michaelb/sniprun', run = 'bash ./install.sh' }
+
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        "jayp0521/mason-null-ls.nvim",
+    })
 
 end)

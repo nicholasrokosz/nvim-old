@@ -1,12 +1,12 @@
-require('neodev').setup({})
-local lsp = require('lsp-zero')
+require("neodev").setup({})
+local lsp = require("lsp-zero")
 
-lsp.preset('recommended')
+lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-    'sumneko_lua',
+	"tsserver",
+	"eslint",
+	"sumneko_lua",
 })
 
 --lsp.on_attach(function(client, bufnr)
@@ -25,14 +25,28 @@ lsp.ensure_installed({
 --    set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
 -- end)
 
-lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+lsp.configure("sumneko_lua", {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
 })
 
 lsp.setup()
+
+local mason_nullls = require("mason-null-ls")
+mason_nullls.setup({
+	ensure_installed = {
+		"eslint_d",
+		"prettierd",
+	},
+	automatic_installation = true,
+	automatic_setup = true,
+})
+
+require("null-ls").setup()
+
+mason_nullls.setup_handlers({})

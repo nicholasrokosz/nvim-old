@@ -16,7 +16,6 @@ local function header()
         [[                                                                  ]],
         [[                                                                  ]],
         [[                                                                  ]],
-        [[                                                                  ]],
         [[                                                              ]],
         [[      ████ ██████ ██  ███   █████      ██              ]],
         [[     ███████████        ███   █████                      ]],
@@ -32,7 +31,7 @@ dashboard.section.header.val = header()
 
 dashboard.section.buttons.val = {
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
+    dashboard.button("c", "  Configuration", ":Ex $MYVIMRC <CR>"),
     dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 

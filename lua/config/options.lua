@@ -1,9 +1,9 @@
-vim.cmd[[
+vim.cmd([[
 set termguicolors
 set background=light
 
 colorscheme zenbones
-]]
+]])
 
 vim.opt.nu = true
 
@@ -16,7 +16,7 @@ vim.opt.smartindent = true
 
 -- vim.opt.wrap = false
 
--- for long-running undo tree 
+-- for long-running undo tree
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -33,7 +33,7 @@ vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = ""
 
-vim.opt.clipboard:append { 'unnamedplus' }
+vim.opt.clipboard:append({ "unnamedplus" })
 
 -- This didn't work without autocmd, taken from https://www.reddit.com/r/neovim/comments/sqld76/stop_automatic_newline_continuation_of_comments/hwm9k47/
 -- vim.opt.formatoptions = 'tcqj'
@@ -46,3 +46,5 @@ vim.o.smartcase = true
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
+
+vim.cmd([[command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>]])
