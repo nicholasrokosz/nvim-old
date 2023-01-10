@@ -167,4 +167,6 @@ return packer.startup(function(use)
 	})
 
 	use("MunifTanjim/prettier.nvim")
+
+	use("rebelot/kanagawa.nvim")
 end)

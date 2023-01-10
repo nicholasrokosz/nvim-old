@@ -48,6 +48,7 @@ wk.register({
 			p = { "<cmd>Telescope registers<cr>", "Pasteboard" },
 			e = { "<cmd>Telescope file_browser theme=ivy<cr>", "File Explorer" },
 			s = { "<cmd>so<cr>", "Source File" },
+			S = { "<cmd>so $MYVIMRC<cr>", "Source nvim config" },
 			u = { "<cmd>UndotreeToggle<cr><C-w>h", "Undo Tree" },
 		},
 		g = {
