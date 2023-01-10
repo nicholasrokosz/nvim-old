@@ -9,6 +9,10 @@ lsp.ensure_installed({
 	"sumneko_lua",
 })
 
+local cmp = require("cmp")
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+
 --lsp.on_attach(function(client, bufnr)
 --    local opts = { buffer = bufnr, remap = false }
 --    local set = vim.keymap.set
@@ -56,7 +60,7 @@ local async = event == "BufWritePost"
 null_ls.setup({
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
-			vim.keymap.set("n", "<Leader>f", function()
+			vim.keymap.set("n", "<Leader>F", function()
 				vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
 			end, { buffer = bufnr, desc = "[lsp] format" })
 
@@ -73,7 +77,7 @@ null_ls.setup({
 		end
 
 		if client.supports_method("textDocument/rangeFormatting") then
-			vim.keymap.set("x", "<Leader>f", function()
+			vim.keymap.set("x", "<Leader>F", function()
 				vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
 			end, { buffer = bufnr, desc = "[lsp] format" })
 		end
