@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 -- vim.keymap.set('n', '<leader>fe', vim.cmd.Ex)
 
 vim.keymap.set("v", "<pagedown>", ":m '>+1<CR>gv=gv")
@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader><right>", "<C-w>l", opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
-vim.keymap.set('n', '+', '<C-a>')
-vim.keymap.set('n', '-', '<C-x>')
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
 
-vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
